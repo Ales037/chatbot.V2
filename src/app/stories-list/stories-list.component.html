@@ -1,0 +1,47 @@
+<style>
+  .btn {
+
+    border: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    float: right
+  }
+
+  /* Darker background on mouse-over */
+  .btn:hover {
+    background-color: #FFEC62;
+  }
+</style>
+
+<main class="page-content">
+  <div class="container-fluid">
+    <h2>Stories</h2>
+    <hr>
+    <div class="row">
+      <div class="form-group col-md-12">
+        <p>bootstrap 4 framework.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-info"><h5>Name Stories</h5>
+          </li>
+          <div type="button" class="list-group-item list-group-item-action" *ngFor="let items of service.list" (click)="populateForm(items)">
+          <a>
+            {{items.stories_headName}}
+            <button class="btn">
+            <i class="fa fa-trash" (click)="onDelete(items.stories_Id)"></i>
+          </button>
+          </a>
+          </div>
+
+        </ul>
+      </div>
+      <div class="col-md">
+      <app-stories-form></app-stories-form>
+      </div>
+    </div>
+  </div>
+</main>
